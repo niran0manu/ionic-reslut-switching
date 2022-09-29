@@ -1,0 +1,7 @@
+{
+  "name": "resutPage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
