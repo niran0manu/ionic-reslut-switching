@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Segments</ion-title>
+
+  </ion-toolbar>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card id="{{c.id}}" *ngFor="let c of cc;" fullscreen >
+    <ion-card-content *ngIf="selectedSegment === 'info'">
+      <ion-text>Info</ion-text>
+      <img src="{{c.image}}" />
+    </ion-card-content>
+    <ion-card-content  *ngIf="selectedSegment === 'map'">
+      <ion-text>Map</ion-text>
+      <img src="{{c.map}}" />
+    </ion-card-content>
+
+
+
+
+
+
+
+
+<!-- segment switch -->
+    <ion-segment value="info" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="info">
+        <ion-label>Info</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="map">
+        <ion-label>Map</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-card>
+
+
+
+
+</ion-content>
+
+
+

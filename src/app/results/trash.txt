@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+   Header
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- 2nd Content Container -->
+  <ion-content>
+    <!-- Drop down Selector  -->
+    <ion-list>
+      <ion-item lines="none">
+        <ion-select interface="popover" placeholder="Select ">
+          <ion-select-option value="apples">By Name</ion-select-option>
+          <ion-select-option value="oranges">By Price </ion-select-option>
+          <ion-select-option value="bananas">By Location</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <!--  End of Drop down selector-->
+    <ion-card *ngIf="selectedSegment === 'info'">
+      <img src="{{c.image}}" />
+      <ion-card-header>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-card-title color="secondary"><strong>Location Name</strong></ion-card-title>
+          <ion-icon name="heart-outline" slot="end"></ion-icon>
+        </ion-item>
+          <ion-card-subtitle>KEMIÖNSAARI, VARSINAIS-SUOMI</ion-card-subtitle>
+          <ion-card-content >
+            <p class="card-content">
+              Taalintehdas on elinvoimainen ja luova kohtaamispaikka, jonka rikas historia ja ja kaunis merellinen miljöö ihastuttavat asukkaiden lisäksi myös matkailijoita.
+            </p>
+          </ion-card-content>
+          <ion-card-content class="ion-no-padding">
+            <ion-list>
+              <ion-item lines="none">
+                <ion-text>Pientaloasumista, kerrostaloasumista, vapaa-ajan asumista</ion-text>
+                <ion-icon name="home-outline" slot="start"></ion-icon>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-text>Pientaloasumista, kerrostaloasumista, vapaa-ajan asumista</ion-text>
+                <ion-icon name="home-outline" slot="start"></ion-icon>
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-text>Pientaloasumista, kerrostaloasumista, vapaa-ajan asumista</ion-text>
+                <ion-icon name="home-outline" slot="start"></ion-icon>
+              </ion-item>
+              <ion-item-divider></ion-item-divider>
+            </ion-list>
+          </ion-card-content>
+          <!-- second card segment -->
+         <ion-card *ngIf="selectedSegment === 'map'">
+          <p>its map time</p>
+         </ion-card>
+
+           <!-- segment Switch-->
+           <ion-segment value="info" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="info">
+              <ion-label>Info </ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="map">
+              <ion-label>Map</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
+      </ion-card-header>
+    </ion-card>
+
+
+
+
+
+
+  <!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="listView">
+      <ion-label>Näytä kartta</ion-label>
+      <ion-icon name="list-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="ChangeSearch">
+      <ion-label>Muokka Hakku</ion-label>
+      <ion-icon name="search"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
+</ion-content>
+
+
